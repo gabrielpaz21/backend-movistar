@@ -1,4 +1,4 @@
-package com.bigsoftware.solutions.backendmovistar;
+package com.movistar.backendmovistar;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,6 +8,7 @@ class AppTests {
 
     @Test
     void contextLoads() {
+        //not implemented yet
     }
 
 }

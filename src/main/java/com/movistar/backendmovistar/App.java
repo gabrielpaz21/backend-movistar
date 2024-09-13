@@ -1,4 +1,4 @@
-package com.bigsoftware.solutions.backendmovistar;
+package com.movistar.backendmovistar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
