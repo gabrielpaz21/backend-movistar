@@ -16,7 +16,7 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping("/{name}/cupos/")
+    @GetMapping("/{name}/cupos")
     public ResponseEntity<Set<Cupo>> findByMobileNumber(@PathVariable String name) {
         User user = userService.findByName(name);
         return ResponseEntity.ok(user.getCupos());

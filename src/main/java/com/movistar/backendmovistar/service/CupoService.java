@@ -8,16 +8,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserService {
+public class CupoService {
 
-    private final UserRepository userRepository;
+    private final CupoRepository cupoRepository;
 
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public CupoService(CupoRepository cupoRepository) {
+        this.cupoRepository=cupoRepository;
     }
 
-    public User findByName(String name) {
-        return userRepository.findByName(name);
+    public List<Long> findAllMobileNumbers() {
+        return cupoRepository.findAllMobileNumbers();
     }
 
 }
