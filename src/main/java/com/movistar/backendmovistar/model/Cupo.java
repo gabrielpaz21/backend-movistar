@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@EntityListeners(AuditingEntityListener.class)
 public class Cupo {
 
     @Id
@@ -21,7 +20,7 @@ public class Cupo {
     private Long id;
 
     @Column(unique = true,length = 11,nullable = false)
-    private Long mobileNumber;
+    private String mobileNumber;
 
     @Column(nullable = false)
     private BigDecimal balance;

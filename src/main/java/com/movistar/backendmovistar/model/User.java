@@ -13,7 +13,6 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@EntityListeners(AuditingEntityListener.class)
 public class User {
 
     @Id
@@ -27,7 +26,7 @@ public class User {
     private String email;
 
     @Column(unique = true,length = 11,nullable = false)
-    private Long mobileNumber;
+    private String mobileNumber;
 
     @OneToMany(mappedBy = "user")
     private Set<Cupo> cupos = new HashSet<>();

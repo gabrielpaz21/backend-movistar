@@ -1,7 +1,7 @@
 package com.movistar.backendmovistar.service;
 
+import com.movistar.backendmovistar.dto.ResponseDTO;
 import com.movistar.backendmovistar.model.User;
-import com.movistar.backendmovistar.repository.CupoRepository;
 import com.movistar.backendmovistar.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +14,21 @@ public class UserService {
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    public List<ResponseDTO> findAll() {
+        List<User> users = userRepository.findAll();
+        return users.stream().flatMap(user ->
+                user.getCupos().stream().map(cupo ->
+                        new ResponseDTO(
+                                user.getName(),
+                                cupo.getMobileNumber(),
+                                cupo.getBalance(),
+                                cupo.getData(),
+                                cupo.getPlatform()
+                        )
+                )
+        ).toList();
     }
 
     public User findByName(String name) {

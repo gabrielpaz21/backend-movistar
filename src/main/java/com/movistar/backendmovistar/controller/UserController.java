@@ -1,5 +1,6 @@
 package com.movistar.backendmovistar.controller;
 
+import com.movistar.backendmovistar.dto.ResponseDTO;
 import com.movistar.backendmovistar.model.Cupo;
 import com.movistar.backendmovistar.model.User;
 import org.springframework.http.ResponseEntity;
@@ -7,6 +8,7 @@ import com.movistar.backendmovistar.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -15,6 +17,11 @@ import java.util.Set;
 public class UserController {
 
     private final UserService userService;
+
+    @GetMapping
+    public ResponseEntity<List<ResponseDTO>> findAll() {
+        return ResponseEntity.ok(userService.findAll());
+    }
 
     @GetMapping("/{name}/cupos")
     public ResponseEntity<Set<Cupo>> findByMobileNumber(@PathVariable String name) {
