@@ -25,7 +25,8 @@ public class UserService {
                                 cupo.getMobileNumber(),
                                 cupo.getBalance(),
                                 cupo.getData(),
-                                cupo.getPlatform()
+                                cupo.getPlatform(),
+                                cupo.getCutOffDate()
                         )
                 )
         ).toList();

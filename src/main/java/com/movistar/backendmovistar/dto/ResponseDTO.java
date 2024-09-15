@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -16,4 +17,5 @@ public class ResponseDTO {
     private BigDecimal balance;
     private long data;
     private Platform platform;
+    private LocalDate cutOffDate;
 }
